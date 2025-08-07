@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(33, 100%, 96%); /* Soft cream background */
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(33, 60%, 94%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(33, 20%, 85%);
+  --input: hsl(33, 20%, 90%);
+  --primary: hsl(19, 100%, 50%); /* Deep orange primary */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(33, 60%, 94%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(33, 60%, 94%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(19, 100%, 50%);
+  --radius: 0.75rem;
+  
+  /* Premium food-themed color palette */
+  --deep-orange: hsl(19, 100%, 50%); /* #FF6F00 */
+  --rich-red: hsl(14, 79%, 46%); /* #D84315 */
+  --soft-cream: hsl(33, 100%, 96%); /* #FFF3E0 */
+  --warm-orange: hsl(19, 100%, 50%);
+  --deep-red: hsl(14, 79%, 46%);
+  --accent-cream: hsl(33, 70%, 92%);
+  --hover-orange: hsl(19, 100%, 45%);
+  --hover-red: hsl(14, 79%, 40%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(20, 90%, 48%);
+  --primary-foreground: hsl(60, 9.1%, 97.8%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    @apply antialiased bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-variation-settings: normal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .deep-orange {
+    color: var(--deep-orange);
+  }
+  
+  .bg-deep-orange {
+    background-color: var(--deep-orange);
+  }
+  
+  .rich-red {
+    color: var(--rich-red);
+  }
+  
+  .bg-rich-red {
+    background-color: var(--rich-red);
+  }
+  
+  .soft-cream {
+    color: var(--soft-cream);
+  }
+  
+  .bg-soft-cream {
+    background-color: var(--soft-cream);
+  }
+  
+  .warm-orange {
+    color: var(--warm-orange);
+  }
+  
+  .bg-warm-orange {
+    background-color: var(--warm-orange);
+  }
+  
+  .deep-red {
+    color: var(--deep-red);
+  }
+  
+  .bg-deep-red {
+    background-color: var(--deep-red);
+  }
+  
+  .accent-cream {
+    color: var(--accent-cream);
+  }
+  
+  .bg-accent-cream {
+    background-color: var(--accent-cream);
+  }
+}
+
+@layer components {
+  /* Premium button styles with hover effects */
+  .btn-premium {
+    @apply font-semibold tracking-wide transition-all duration-300 ease-out;
+    @apply transform hover:scale-105 hover:shadow-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-deep-orange;
+  }
+  
+  .btn-primary {
+    @apply bg-deep-orange text-white hover:bg-orange-600;
+    @apply shadow-md hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-rich-red text-white hover:bg-red-700;
+    @apply shadow-md hover:shadow-xl;
+  }
+  
+  /* Premium card styles */
+  .card-premium {
+    @apply bg-white rounded-xl shadow-md hover:shadow-xl;
+    @apply transition-all duration-300 ease-out;
+    @apply border border-gray-100 hover:border-orange-300;
+    @apply transform hover:-translate-y-1;
+  }
+  
+  /* Premium input styles */
+  .input-premium {
+    @apply border-gray-200 focus:border-deep-orange focus:ring-deep-orange;
+    @apply transition-all duration-200 ease-out;
+    @apply bg-white/80 focus:bg-white;
+  }
+}
+
+/* Hero section background gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(255, 111, 0, 0.8) 0%, rgba(216, 67, 21, 0.9) 100%);
+}
+
+/* Food item hover effects */
+.food-item-hover {
+  @apply transition-all duration-300 ease-out;
+  @apply hover:shadow-xl hover:-translate-y-2;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 { @apply text-3xl; }
+  h2 { @apply text-2xl; }
+  h3 { @apply text-xl; }
+}
