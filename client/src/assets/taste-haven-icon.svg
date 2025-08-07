@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <!-- Logo Icon: Plate with Steam -->
+  <g transform="translate(5, 10)">
+    <!-- Plate -->
+    <ellipse cx="25" cy="35" rx="20" ry="6" fill="#FF6F00" opacity="0.2"/>
+    <ellipse cx="25" cy="33" rx="18" ry="5" fill="#FF6F00" opacity="0.3"/>
+    <ellipse cx="25" cy="31" rx="16" ry="4" fill="#FF6F00"/>
+    
+    <!-- Steam Lines -->
+    <g stroke="#FF6F00" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9">
+      <path d="M 20 25 Q 18 18 20 12 Q 22 6 20 0" stroke-dasharray="3,1"/>
+      <path d="M 25 25 Q 23 18 25 12 Q 27 6 25 0" stroke-dasharray="3,1"/>
+      <path d="M 30 25 Q 28 18 30 12 Q 32 6 30 0" stroke-dasharray="3,1"/>
+    </g>
+    
+    <!-- Fork and Spoon -->
+    <g transform="translate(38, 15)" opacity="0.8">
+      <!-- Fork -->
+      <g stroke="#D84315" stroke-width="2" fill="none">
+        <line x1="2" y1="0" x2="2" y2="18"/>
+        <line x1="0" y1="0" x2="0" y2="15"/>
+        <line x1="4" y1="0" x2="4" y2="15"/>
+        <line x1="6" y1="0" x2="6" y2="12"/>
+      </g>
+      
+      <!-- Spoon -->
+      <g fill="#D84315">
+        <ellipse cx="12" cy="4" rx="2.5" ry="4"/>
+        <rect x="11.2" y="8" width="1.6" height="12" rx="0.8"/>
+      </g>
+    </g>
+  </g>
+</svg>
