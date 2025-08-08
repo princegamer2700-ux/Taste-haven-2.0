@@ -1,42 +1,37 @@
-import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/home";
-import Menu from "@/pages/menu";
-import Cart from "@/pages/cart";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+// client/src/App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Home from './pages/Home';
+import Menu from './pages/Menu';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Navbar from './components/PremiumNavbar';
+import Footer from './components/PremiumFooter';
+import { CartProvider } from './context/CartContext';
+import './index.css';
 
-function Router() {
+const App = () => {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/menu" component={Menu} />
-      <Route path="/cart" component={Cart} />
-      {/* Fallback to 404 */}
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
-
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <div className="min-h-screen flex flex-col">
+    <CartProvider>
+      <Router>
+        <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#0f0c29] via-[#1a1a2e] to-[#16213e] text-white">
           <Navbar />
           <main className="flex-grow">
-            <Router />
+            <AnimatePresence mode="wait">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+              </Routes>
+            </AnimatePresence>
           </main>
           <Footer />
         </div>
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
+      </Router>
+    </CartProvider>
   );
-}
+};
 
 export default App;
