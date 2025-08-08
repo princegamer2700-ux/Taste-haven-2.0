@@ -1,62 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 body {
-  margin: 0;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 100%);
-  color: #f8fafc;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* Glassmorphism effect */
-.glass-card {
-  background: rgba(26, 26, 46, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(20, 255, 236, 0.2);
-  box-shadow: 0 8px 32px rgba(13, 115, 119, 0.1);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0f0c29;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #14ffec, #0d7377);
-  border-radius: 4px;
-}
-
-/* Animations */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.floating {
-  animation: float 4s ease-in-out infinite;
-}
-
-/* Buttons */
-.btn-primary {
-  @apply bg-gradient-to-r from-[#14ffec] to-[#0d7377] text-[#0f0c29] font-bold py-3 px-6 rounded-full hover:from-[#0d7377] hover:to-[#14ffec] transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#14ffec]/20;
-}
-
-/* Text gradients */
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#14ffec] to-[#0d7377];
+  font-family: 'Poppins', sans-serif;
 }
